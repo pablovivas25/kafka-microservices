@@ -12,9 +12,11 @@ def create_producer():
         retries=5,         # Reintentos automáticos
     )
 
-producer = create_producer()
+def get_producer():
+  return create_producer()
 
 def publish_order_created(order):
+    producer=get_producer()
     event = {
         "event_id": str(uuid.uuid4()),
         "event_type": "OrderCreated",
