@@ -38,5 +38,5 @@ jobs:
 
       - name: Run tests
         run: |
-          cd order-service
-          pytest
+            cd order-service
+            PYTHONPATH=. pytest
